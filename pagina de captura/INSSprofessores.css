@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    
+  }
+  body{
+    background: linear-gradient(to bottom,rgb(0, 0, 0),#ff9807, rgb(247, 230, 0) ) ;
+   text-align: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    height: 12vh;
+    z-index: 3;
+    margin-bottom: 50px;
+  }
+  header{
+    
+    background-size: 100%;
+    text-align: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .content{
+
+    margin-top: 60px;
+    
+  }
+
+  
+   .Video1{
+    display: block;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    border: 5px outset orange;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    z-index: 100;
+  }
+  nav a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  nav a:hover {
+    opacity: 0.7;
+    
+  }
+  .logo{
+    z-index: 100;
+  }
+  header a{
+    text-decoration: none;
+    
+  }
+  .wpp{
+    background-color: #25d366;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 5px outset rgb(156, 247, 104);
+    color: white;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    align-items: center;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
+    padding: 10px;
+    vertical-align: middle;
+    margin-bottom: 150px;
+  }
+  .wpp i{
+    font-size: 40px;
+    vertical-align: middle;
+    padding-right: 10px;
+    padding-bottom: 7px;
+  }
+  header p1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    color: #FFFF;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  header p2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    color: #FFFF;
+    margin-bottom: 20px;
+    font-size: 35px;
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  .material-symbols-outlined{
+    overflow-y: hidden;
+    
+  }
+  
+  
+  
+
+ 
+  footer {
+    width: 100%;
+    color: whitesmoke;
+    background: rgb(53, 53, 53);
+    height: 100%;
+  
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#footer_content {
+    background-color: var(--color-neutral-10);
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 3rem ;
+    padding-bottom: 1rem ;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 0.2rem;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    justify-content: center;
+} 
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#footer_social_media .footer-link i {
+    font-size: 1.25rem;    
+}
+
+#footer_social_media .footer-link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+    background-color: #4267b3;
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    color: var(--color-neutral-30);
+    transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+    color: orange;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#footer_subscribe p {
+    color: var(--color-neutral-30);
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-neutral-0);
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+    border: 1px solid white;
+}
+
+#input_group button {
+    background-color: orange;
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+   
+}
+
+
+
+#footer_copyright {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-neutral-0);
+    font-size: 0.9rem;
+    padding-top: 5rem;
+    
+    font-weight: 100;
+}
+#email{
+  padding: 10px;
+  padding-right: 50px ;
+  border: 1px solid orange;
+  border-radius: 10px 0px 0px 10px;
+}
+
+/* #whatsapp-link{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: 1px 1px 2px #888;
+  z-index: 1000;
+  transition: 0.2s;
+  
+}
+#whatsapp-link:hover{
+  opacity: 0.7;
+}
+#whatsapp-link i{
+  margin-top: 16px;
+} */
+@media screen and (max-width: 1750px) {
+
+  .wpp{
+    font-size: 23px;
+    
+  }
+  .wpp i{
+    font-size: 30px;
+  }
+  
+  
+}
+@media screen and (max-width: 1550px) {
+
+  .wpp{
+    font-size: 23px;
+  
+  }
+  .wpp i{
+    font-size: 30px;
+  }
+  
+  
+}
+@media screen and (max-width: 975px) {
+  
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .Video1{
+      width: 500px;
+    }
+    .wpp{
+      font-size: 23px;
+     
+    }
+    .wpp i{
+      font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 756px) {
+  .wpp{
+    font-size: 25px;
+   
+  }
+  header{
+    max-width: 500px;
+  }
+  .wpp i{
+    font-size: 30px;
+  }
+  header p2{
+    font-size: 29px;
+  }
+  header p1{
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 532px) {
+ 
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+    }
+    .Video1{
+      width: 400px;
+    }
+    .wpp{
+      font-size: 20px;
+     
+    }
+    .wpp i{
+      font-size: 27px;
+    }
+} 
+@media screen and (max-width: 430px) {
+ 
+  .Video1{
+    width: 350px;
+  }
+  .wpp{
+    font-size: 20px;
+    
+  }
+  .wpp i{
+    font-size: 20px;
+  }
+} 
+
+ 
+  
+  
+
+ 
