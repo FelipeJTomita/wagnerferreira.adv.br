@@ -321,6 +321,9 @@
 }
 
 @media screen and (max-width: 756px) {
+  .body{
+    max-width: 600px;
+  }
   .wpp{
     font-size: 25px;
    
@@ -340,6 +343,9 @@
 }
 
 @media screen and (max-width: 532px) {
+    .body{
+      max-width: 500px;
+    }
  
     #footer_content {
         grid-template-columns: repeat(1, 1fr);
@@ -357,7 +363,9 @@
     }
 } 
 @media screen and (max-width: 430px) {
- 
+  .body{
+    max-width: 300px;
+  }
   .Video1{
     width: 350px;
   }

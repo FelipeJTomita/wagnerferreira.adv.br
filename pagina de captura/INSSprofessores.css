@@ -363,7 +363,9 @@
     }
 } 
 @media screen and (max-width: 430px) {
- 
+  header{
+    max-width: 400px;
+  }
   .Video1{
     width: 350px;
   }
