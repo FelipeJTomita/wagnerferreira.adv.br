@@ -5,6 +5,9 @@
     overflow-x: hidden;
     
   }
+  html{
+    scroll-behavior: smooth;
+  }
   body{
     background: linear-gradient(to bottom,rgb(0, 0, 0),#ff9807, rgb(247, 230, 0) ) ;
    text-align: center;

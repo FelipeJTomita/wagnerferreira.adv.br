@@ -5,6 +5,9 @@
     overflow-x: hidden;
     
   }
+  html{
+    scroll-behavior: smooth;
+  }
   body{
     background: #FFFF url("/pagina de captura/images/bg.png") no-repeat right top ;
   }
