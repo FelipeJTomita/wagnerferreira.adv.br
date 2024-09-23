@@ -1,0 +1,319 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* background-color: #f4f4f4; */
+    background: linear-gradient(to bottom right,black,#142841,rgb(247, 204, 63)) ;
+}
+html{
+    scroll-behavior: smooth;
+  }
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+}
+
+main {
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    
+}
+
+.product-info, .alternative-offer {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width:  100%;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+footer {
+    width: 100%;
+    color: whitesmoke;
+    background: rgb(53, 53, 53);
+    height: 100%;
+  
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#footer_content {
+    background-color: var(--color-neutral-10);
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 3rem ;
+    padding-bottom: 1rem ;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 0.2rem;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    justify-content: center;
+} 
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#footer_social_media .footer-link i {
+    font-size: 1.25rem;    
+}
+
+#footer_social_media .footer-link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+    background-color: #4267b3;
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    color: var(--color-neutral-30);
+    transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+    color: orange;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+#footer_subscribe p {
+    color: var(--color-neutral-30);
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    background-color: var(--color-neutral-0);
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+    border: 1px solid white;
+}
+
+#input_group button {
+    background-color: orange;
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 10px 1rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+   
+}
+
+
+
+#footer_copyright {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-neutral-0);
+    font-size: 0.9rem;
+    padding-top: 2rem;
+    font-weight: 100;
+    padding-bottom: 1rem;
+}
+#email{
+  padding: 10px;
+  padding-right: 50px ;
+  border: 1px solid orange;
+  border-radius: 10px 0px 0px 10px;
+}
+footer {
+  width: 100%;
+  color: whitesmoke;
+  background: rgb(53, 53, 53);
+  height: 100%;
+
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+#footer_content {
+  background-color: var(--color-neutral-10);
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 3rem ;
+  padding-bottom: 1rem ;
+}
+
+#footer_contacts h1 {
+  margin-bottom: 0.2rem;
+}
+
+#footer_social_media {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  justify-content: center;
+} 
+
+#footer_social_media .footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--color-neutral-40);
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+#footer_social_media .footer-link i {
+  font-size: 1.25rem;    
+}
+
+#footer_social_media .footer-link:hover {
+  opacity: 0.8;
+}
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+  background-color: #4267b3;
+}
+
+#whatsapp {
+  background-color: #25d366;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.footer-list .footer-link {
+  color: var(--color-neutral-30);
+  transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+  color: orange;
+}
+
+#footer_subscribe {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+#footer_subscribe p {
+  color: var(--color-neutral-30);
+}
+
+#input_group {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  background-color: var(--color-neutral-0);
+  border-radius: 4px;
+}
+
+#input_group input {
+  all: unset;
+  padding: 0.75rem;
+  width: 100%;
+  border: 1px solid white;
+}
+
+#input_group button {
+  background-color: orange;
+  border: none;
+  color: var(--color-neutral-40);
+  padding: 10px 1rem;
+  font-size: 1.125rem;
+  height: 100%;
+  border-radius: 0px 4px 4px 0px;
+ 
+}
+
+
+
+#footer_copyright {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-neutral-0);
+  font-size: 0.9rem;
+  padding-top: 2rem;
+  font-weight: 100;
+  padding-bottom: 1rem;
+}
+#email{
+padding: 10px;
+padding-right: 50px ;
+border: 1px solid orange;
+border-radius: 10px 0px 0px 10px;
+}
