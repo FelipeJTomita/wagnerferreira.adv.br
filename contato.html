@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WF | Advogados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="shortcut icon" type="image/png" href="images/Icon-Ednea.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+    --primary-color: #bb9b23;
+    --accent-color: #d6c47c;
+    --tercent-color:#ddc4bf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    margin: auto;
+}
+
+body {
+    font-family: montserrat;
+    color: var(--primary-color);
+    background-color: #f9f9f9;
+    
+}
+
+.navbar {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.9); /* Cor sólida */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+     /* Ajuste de texto */
+}
+.options {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.navbar img {
+    
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar.scrolled .nav-logo img {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 1rem;
+}
+.options:hover{
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
+footer {
+    width: 100%;
+    color: whitesmoke;
+    background: rgb(53, 53, 53);
+    }
+    #footer_contacts p{
+        font-size: 30px;
+    }
+    .footer-link {
+    text-decoration: none;
+    }
+    
+    #footer_content {
+    background-color: var(--color-neutral-10);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+    }
+    
+    #footer_contacts h1 {
+    
+    }
+    
+    #footer_social_media {
+    display: flex;
+    gap: 2rem;
+
+    } 
+    
+    #footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+    }
+    
+    #footer_social_media .footer-link i {
+    font-size: 1.25rem;    
+    }
+    
+    #footer_social_media .footer-link:hover {
+    opacity: 0.7;
+    }
+    
+    #instagram {
+    background: linear-gradient(var(--primary-color), var(--accent-color));
+    }
+    
+    #facebook {
+    background: linear-gradient(var(--primary-color), var(--accent-color));
+    }
+    
+    #whatsapp {
+    background: linear-gradient(var(--primary-color), var(--accent-color));
+    }
+    
+    .footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    }
+    
+    .footer-list .footer-link {
+    color: var(--color-neutral-30);
+    transition: all 0.4s;
+    }
+    
+    .footer-list .footer-link:hover {
+    color: var(--accent-color);
+    }
+    
+    #footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    }
+    
+    #footer_subscribe p {
+    color: var(--color-neutral-30);
+    }
+    
+    #input_group {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-neutral-0);
+    border-radius: 4px;
+    }
+    
+    #input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+    border: 1px solid white;
+    }
+    
+    #input_group button {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 10px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    
+    }
+    
+    .hamburger{
+    display: none;
+    }
+    
+    #footer_copyright {
+        display: flex;
+        justify-content: center;
+        background-color: var(--color-neutral-0);
+        font-size: 0.9rem;
+        padding: 1.5rem;
+        font-weight: 100;
+    }
+    #email{
+    padding: 10px;
+    padding-right: 50px ;
+    border: 1px solid var(--accent-color);;
+    border-radius: 10px 0px 0px 10px;
+    }
+    #whatsapp-link{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+    transition: 0.2s;
+    
+    }
+    #whatsapp-link:hover{
+    opacity: 0.7;
+    }
+    #whatsapp-link i{
+    margin-top: 16px;
+    }
+    #video2{
+        display: none;
+    }
+    #footer_copyright{
+        text-align: center;
+    }
+    
+    body {
+            font-family: montserrat;
+            text-align: center;
+            background: radial-gradient(var(--primary-color),black) ;
+            background-size: 1990px;;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+            min-height: 100vh;
+           
+        }
+
+        .container {
+            
+            padding: 20px;
+            min-height: 70vh;
+            vertical-align: middle;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            
+            margin-bottom: 20px;
+           ;
+        }
+
+       
+        a{
+            text-decoration: none;
+        }
+
+        .container p {
+            font-size: 1.2em;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .icons a {
+            margin: 0 10px;
+        }
+
+        .icons img {
+            width: 40px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            margin-bottom: 300px;
+        }
+
+        .button {
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+            max-width: 500px;
+            padding: 20px 20px;
+            box-shadow: 10px 16px black;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #555;
+            transform: translateY(4px);
+            box-shadow: 10px 12px black;
+        }
+
+@media (max-width: 768px) {
+    .navbar ul {
+        text-align: center;
+        flex-direction: column;
+        display: none;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .navbar li{
+        padding: 10px;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: white;
+    }
+    #img1{
+        display: none;
+    }
+    #img2{
+        display: block;
+    }
+    .options {
+        
+        color: var(--primary-color);
+        
+    }
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    body{
+                background: radial-gradient(var(--primary-color) 30%,black) ;
+            }
+    @media screen and (max-width: 500px) {
+
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+    #input_group button {
+        color: var(--color-neutral-40);
+        padding: 10px 0.7rem;
+    }
+    }
+   
+}
+    </style>
+
+</head>
+<body>
+    
+        <nav class="navbar">
+            <a href="index.html"><img id="logo" src="images/Logo Lateral WF.png" width="220px"></a>
+            <ul id="menu">
+                <li><a class="options" href="index.html">Home</a></li>
+                <li><a class="options" href="areasdeatuacao.html">Áreas de Atuação</a></li>
+                <li><a class="options" href="index.html#filiais">Filiais</a></li>
+                <li><a class="options"  href="contato.html">Contato</a></li>
+            </ul>
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+        </nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img id="logo" src="images/Logo Frontal WF.png" width="180px"></a>
+            </div>
+            <p>Conheça meus canais de contato!</p>
+            <div class="icons">
+                <a href="https://www.instagram.com/wagnerpastor7/" target="_blank"><img src="Images/instagram1.png" alt="Instagram"></a>
+                <a href="https://wa.me/557196841314?text=Ol%C3%A1!" target="_blank"><img src="Images/whatsapp1.png" alt="WhatsApp"></a>
+                <a href="https://www.linkedin.com/in/wagner-ferreira-pastor-484749133/" target="_blank"><img src="Images/linkedin.png" alt="Linkedin"></a>
+            </div>
+            <div class="buttons">
+                <a href="index.html" class="button">Site</a>
+                <a href="https://www.instagram.com/wagnerpastor7/" class="button" target="_blank">Instagram</a>
+                <a href="https://wa.me/557196841314?text=Ol%C3%A1!" class="button" target="_blank">Whatsapp</a>
+                <a href="https://www.linkedin.com/in/wagner-ferreira-pastor-484749133/" class="button" target="_blank">Linkedin</a>
+                
+            </div>
+        </div>
+        
+    
+        <footer>
+            <div id="footer_content">
+                <div id="footer_contacts">
+                    <h1><img style="width: 150px; " src="images/Logo Frontal WF.png"></h1>
+                    
+    
+                    <div id="footer_social_media">
+                        <a href="https://www.instagram.com/wagnerpastor7/" class="footer-link" id="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+    
+                        <a href="https://www.facebook.com/edneateles?locale=pt_BR" class="footer-link" id="facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+    
+                        <a href="https://wa.me/557196841314?text=Ol%C3%A1!" class="footer-link" id="whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <ul class="footer-list">
+                    <li>
+                        <h3>Home</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Profissionais</a>
+                    </li>
+                    <li>
+                        <a href="#filiais" class="footer-link">Filiais</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Contato</a>
+                    </li>
+                </ul>
+    
+                <ul class="footer-list">
+                    <li>
+                        <h3>Áreas de Atuação</h3>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Administrativo</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Penal</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Tributário</a>
+                    </li>
+                </ul>
+                <ul class="footer-list">
+                  <li>
+                      <h3>Anúncios</h3>
+                  </li>
+                  <li>
+                      <a href="/anuncios/INSSsaúde.html" class="footer-link">Profissionais de Saúde</a>
+                  </li>
+                  <li>
+                      <a href="/anuncios/INSSprofessores.html" class="footer-link">Professores</a>
+                  </li>
+                  <li>
+                      <a href="/anuncios/InsençãoTributária.html" class="footer-link">Imposto de Renda</a>
+                  </li>
+                  <li>
+                    <a href="/formulario.html" class="footer-link">Formulário</a>
+                </li>
+              </ul>
+    
+              <!-- ESPAÇO ABAIXO DA LOGO -->
+              <ul class="footer-list">
+                <li>
+                    <h3></h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link"></a>
+                </li>
+                <li>
+                    <a href="/anuncios/INSSprofessores.html" class="footer-link"></a>
+                </li>
+                <li>
+                    <a href="/anuncios/InsençãoTributária.html" class="footer-link"></a>
+                </li>
+                
+            </ul>
+              <!-- ESPAÇO ABAIXO DA LOGO -->
+    
+                
+            </div>
+            <div id="footer_subscribe">
+                <h3>Nosso Email</h3>
+    
+                
+    
+                <div id="input_group">
+                    <p id="email"> contato@wagnerferreira.adv.br</p> 
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+    
+            <div id="footer_copyright">
+                &#169
+                2024 WF Advogados - Todos os direitos reservados
+            </div>
+            <div style="font-size: 0.9rem;
+            font-weight: 100;
+            text-align: center;
+            background-color: var(--color-neutral-0);">
+            Desenvolvido por <span style="color:white; font-weight: bold;" >DIGITALI<span style="color:#ff8c00;">-Z </span></span><br><br>
+            </div>
+        </footer>
+    
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('menu');
+                menu.classList.toggle('active');
+
+            }
+             
+            
+        </script>
+        <script src="script.js"></script>
+</body>
+</html>

@@ -1,10 +1,16 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-family: montserrat;
     overflow-x: hidden;
     
   }
+  :root {
+    --primary-color: #bb9b23;
+    --accent-color: #d6c47c;
+    --tercent-color:#ddc4bf;
+}
+
   html{
     scroll-behavior: smooth;
   }
@@ -21,9 +27,13 @@
     justify-content: space-around;
     align-items: center;
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    height: 12vh;
+    height: 15vh;
     z-index: 3;
   }
+  #contato{
+    text-decoration: none;
+    background-color:var(--primary-color); border-radius: 20px; padding: 10px;color: white; transition: 1s;
+}
   
   .video{
     display: block;
@@ -38,14 +48,14 @@
   }
   
   .video .content{
-    margin-left: 300px;
+    margin: auto;
     position: relative;
     max-width: 800px;
     text-align: left;
     margin-top: 150px;
     margin-bottom: 400px;
     padding: 40px;
-    border: 10px outset orange;
+    border: 10px outset var(--accent-color);
   }
   .video .content p2{
     font-size: 42px;
@@ -113,8 +123,8 @@
   }
   #corpo p2{
     font-family: Montserrat;
-    color: orange;
-    border-bottom: 1px solid orange;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
     
   }
   
@@ -128,7 +138,7 @@
     padding-bottom: 5px;
     outline: none;
     font-size: 35px;
-    border-bottom: 1px solid rgb(255, 166, 0);
+    border-bottom: 1px solid var(--primary-color);
     
   }
   #corpo a{
@@ -202,7 +212,7 @@
     
   }
   #filiais h2{
-    color: orange;
+    color: var(--primary-color);
     padding-top: 50px;
     font-size: 30px;
     font-weight: bolder;
@@ -342,7 +352,7 @@
 }
 
 #input_group button {
-    background-color: orange;
+    background-color: var(--accent-color);
     border: none;
     color: var(--color-neutral-40);
     padding: 0px 1.25rem;
@@ -365,7 +375,7 @@
 #email{
   padding: 10px;
   padding-right: 50px ;
-  border: 1px solid orange;
+  border: 1px solid var(--accent-color);
   border-radius: 10px 0px 0px 10px;
 }
 #whatsapp-link{
@@ -395,6 +405,9 @@
     #footer_content {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+    .video .content{
+      max-width: 600px;
     }
 }
 
