@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Robson Teles | Corretor de Imóveis |</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="images/icon.png">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <!-- Swipper CSS -->
+     <link rel="stylesheet" href="swiper-bundle.min.css">
+</head>
+<style>
+    *{
+        
+    }
+    :root {
+    --primary-color: #003366;
+    --accent-color: #0055A4;
+    --tercent-color:#2e6eaa;
+}
+
+    body {
+        
+        margin: 0;
+        font-family: Montserrat;
+    }
+
+        header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    color: white;
+    padding: 10px 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box; /* Garante que padding não estoure o width */
+}
+
+.nav {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap; /* Evita que os itens transbordem */
+    max-width: 100%; /* Garante que não passe da tela */
+    overflow-x: auto; /* Se necessário, adiciona rolagem horizontal */
+    padding-top: 10px;
+}
+    .nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.15rem;
+        text-align: center;
+    }
+    
+    .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .carrossel {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+    .carrossel img {
+        width: 100%;
+        
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .carrossel img.active {
+        opacity: 1;
+    }
+    .carrossel .nav-buttons {
+        display: none;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    .carrossel .nav-buttons button {
+        background-color: rgba(0, 51, 102, 0.7);
+        border-radius: 100%;
+        color: white;
+        border: none;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+        cursor: pointer;
+        font-size: 2rem;
+        transition: background-color 0.3s;
+        z-index: 11;
+        position: relative;
+    }
+    .carrossel .nav-buttons button:hover {
+        background-color: rgba(0, 51, 102, 1);
+    }
+    .featured-properties {
+    padding: 200px 5%;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.featured-properties h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+.imoveis-container {
+        display: flex;
+        max-width: 1500px;
+        margin: auto;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 200px;
+        margin-bottom: 200px;
+        
+    }
+
+    .imovel-card {
+        width: 300px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .imovel-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .imovel-card h3 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .imovel-card .price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #0055A4;
+    }
+
+    .imovel-card p {
+        margin: 5px 0;
+    }
+
+    .imovel-card button {
+        background: #0055A4;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .imovel-card button:hover {
+        background: #003366;
+    }
+
+
+.about-section {
+    background: linear-gradient(to right, #003366, #0055A4);
+    color: white;
+    padding: 200px 10%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+footer {
+    overflow-x: hidden;
+    width: 100%;
+    color: whitesmoke;
+    background: var(--primary-color);
+    }
+    #footer_contacts p{
+        font-size: 30px;
+    }
+    .footer-link {
+    text-decoration: none;
+    }
+    
+    #footer_content {
+    background-color: var(--color-neutral-10);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+    }
+    
+    #footer_contacts h1 {
+    
+    }
+    
+    #footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    margin-left: 20px;
+    } 
+    
+    #footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    
+    transition: all 0.4s;
+    }
+    
+    #footer_social_media .footer-link i {
+    font-size: 1.25rem;    
+    }
+    
+    #footer_social_media .footer-link:hover {
+    opacity: 0.7;
+    }
+    
+    #instagram {
+    background: linear-gradient(var(--primary-color),var(--tercent-color), var(--accent-color));
+    }
+    
+    #facebook {
+    background: linear-gradient(var(--primary-color),var(--tercent-color), var(--accent-color));
+    }
+    
+    #whatsapp {
+    background: linear-gradient(var(--primary-color),var(--tercent-color), var(--accent-color));
+    }
+    
+    .footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    }
+    
+    .footer-list .footer-link {
+    color: var(--color-neutral-30);
+    transition: all 0.4s;
+    }
+    
+    .footer-list .footer-link:hover {
+    color: var(--accent-color);
+    }
+    
+    
+    #footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    }
+    
+    #footer_subscribe p {
+    color: var(--color-neutral-30);
+    }
+    
+    #input_group {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    background-color: var(--color-neutral-0);
+    border-radius: 4px;
+    }
+    
+    #input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+    border: 1px solid white;
+    }
+    
+    #input_group button {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 10px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    
+    }
+    
+    .hamburger{
+    display: none;
+    }
+    
+    #footer_copyright {
+        display: flex;
+        justify-content: center;
+        background-color: var(--color-neutral-0);
+        font-size: 0.9rem;
+        padding: 1.5rem;
+        font-weight: 100;
+    }
+    #email{
+    padding: 10px;
+    padding-right: 50px ;
+    border: 1px solid var(--accent-color);;
+    border-radius: 10px 0px 0px 10px;
+    }
+    #whatsapp-link{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+    transition: 0.2s;
+    
+    }
+    #whatsapp-link:hover{
+    opacity: 0.7;
+    }
+    #whatsapp-link i{
+    margin-top: 16px;
+    }
+    #video2{
+        display: none;
+    }
+    #footer_copyright{
+        text-align: center;
+    }
+    @media (max-width: 768px) {
+        .nav {
+            display: none;
+            flex-direction: column;
+            background: #003366;
+            position: absolute;
+            top: 120px;
+            right: 0;
+            width: 100%;
+            padding-top: 1rem;padding-bottom: 1rem;
+        }
+        .nav.active {
+            display: flex;
+        }
+        .menu-toggle {
+            display: block;
+        }
+        #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .footer-link{
+        margin: auto;
+    }
+
+    @media screen and (max-width: 670px) {
+
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+    #input_group button {
+        color: var(--color-neutral-40);
+        padding: 10px 0.7rem;
+    }
+}
+    }
+</style>
+</head>
+<body>
+<header>
+    <a href="/index.html"><div class="logo"><img src="images/logo1.png" width="190px" alt=""></div></a>
+    <button class="menu-toggle">☰</button>
+    <nav class="nav">
+        <a href="/index.html">Home</a>
+        <a href="./imoveis.html">Imóveis</a>
+        <a href="/sobre.html">Sobre</a>
+        <a id="contato"  href="contato.html">Fale comigo</a>
+    </nav>
+</header>
+
+<div class="carrossel">
+    <div class="nav-buttons">
+        <button id="prev-banner">&#10094;</button>
+        <button id="next-banner">&#10095;</button>
+    </div>
+    <a href="https://api.whatsapp.com/send/?phone=557181117209&text=Quero+saber+mais+sobre+o+Condominio+Residencial+Lagoa+do+Jokey.&type=phone_number&app_absent=0">
+    <picture>
+        <source media="(max-width: 768px)" srcset="images/bannerimo-mobile2.png">
+        <img src="/imoveis/imoveis-detalhes/imagens/5.png" class="active" alt="Imagem 1">
+    </picture>
+
+    <picture>
+        <source media="(max-width: 768px)" srcset="images/bannerimo-mobile.png">
+        <img src="/imoveis/imoveis-detalhes/imagens/4.png" alt="Imagem 2">
+    </picture>
+
+    <!-- <picture>
+        <source media="(max-width: 768px)" srcset="images/banner3-mobile.png">
+        <img src="images/banner3.png" alt="Imagem 3">
+    </picture> -->
+</div>
+</a>
+
+<div class="imoveis-container">
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 1">
+        <h3>Casa Luxuosa no Bairro Nobre</h3>
+        <p class="price">R$ 1.200.000</p>
+        <p>3 Quartos | 2 Banheiros | 120m²</p>
+        <button>Saiba Mais</button>
+    </div>
+    
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 2">
+        <h3>Apartamento Moderno no Centro</h3>
+        <p class="price">R$ 850.000</p>
+        <p>2 Quartos | 1 Banheiro | 90m²</p>
+        <button>Saiba Mais</button>
+    </div>
+    
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 3">
+        <h3>Sobrado com Piscina</h3>
+        <p class="price">R$ 1.500.000</p>
+        <p>4 Quartos | 3 Banheiros | 200m²</p>
+        <button>Saiba Mais</button>
+    </div>
+
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 4">
+        <h3>Chácara Espaçosa</h3>
+        <p class="price">R$ 980.000</p>
+        <p>5 Quartos | 3 Banheiros | 500m²</p>
+        <button>Saiba Mais</button>
+    </div>
+
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 1">
+        <h3>Casa Luxuosa no Bairro Nobre</h3>
+        <p class="price">R$ 1.200.000</p>
+        <p>3 Quartos | 2 Banheiros | 120m²</p>
+        <button>Saiba Mais</button>
+    </div>
+    
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 2">
+        <h3>Apartamento Moderno no Centro</h3>
+        <p class="price">R$ 850.000</p>
+        <p>2 Quartos | 1 Banheiro | 90m²</p>
+        <button>Saiba Mais</button>
+    </div>
+    
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 3">
+        <h3>Sobrado com Piscina</h3>
+        <p class="price">R$ 1.500.000</p>
+        <p>4 Quartos | 3 Banheiros | 200m²</p>
+        <button>Saiba Mais</button>
+    </div>
+
+    <div class="imovel-card">
+        <img src="imoveis/imoveis-detalhes/imagens/Imovel1 -1.jpg" alt="Imóvel 4">
+        <h3>Chácara Espaçosa</h3>
+        <p class="price">R$ 980.000</p>
+        <p>5 Quartos | 3 Banheiros | 500m²</p>
+        <button>Saiba Mais</button>
+    </div>
+</div>
+
+<!-- <section class="about-section animation1">
+    <div class="about-content">
+        <h2>Seu Novo Lar Começa Aqui</h2>
+        <p>Encontre o imóvel dos seus sonhos com a segurança e confiança que você merece. Com anos de experiência no mercado imobiliário, oferecemos um serviço personalizado para atender suas necessidades. Seja para comprar, vender ou alugar, estamos aqui para tornar esse momento mais fácil e seguro para você.</p>
+    </div>
+</section> -->
+
+<footer>
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <h1><img style="width: 230px; " src="images/logo1.png"></h1>
+            
+
+            <div id="footer_social_media">
+                <a href="https://www.instagram.com/robsontelesoficial/" class="footer-link" id="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <!-- <a href="https://www.facebook.com/edneateles?locale=pt_BR" class="footer-link" id="facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a> -->
+
+                <a href="https://wa.me/557181117209?text=Ol%C3%A1!" class="footer-link" id="whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        
+        <ul class="footer-list">
+            <li>
+               <h3> <a href="/index.html" class="footer-link">Home</a></h3>
+            </li>
+            <li>
+                <a href="sobre.html" class="footer-link">Sobre</a>
+            </li>
+            <!-- <li>
+                <a href="servicos.html" class="footer-link">Serviços</a>
+            </li> -->
+            <li>
+                <a href="contato.html" class="footer-link">Fale Comigo</a>
+            </li>
+        </ul>
+
+        <ul class="footer-list">
+            <li>
+                <h3> <a href="imoveis.html" class="footer-link">Imóveis</a></h3>
+            </li>
+            <li>
+                <a  class="footer-link">Imóveis para Venda</a>
+            </li>
+            <li>
+                <a  class="footer-link">Imóveis para Aluguel</a>
+            </li>
+            <li>
+                <a  class="footer-link">Imóvel para Temporada</a>
+            </li>
+            <!-- <li>
+                <a href="" class="footer-link">Aplicação de medidas administrativas</a>
+            </li> -->
+        </ul>
+        
+      <!-- ESPAÇO ABAIXO DA LOGO -->
+      <!-- <ul class="footer-list">
+        <li>
+            <h3></h3>
+        </li>
+        <li>
+            <a href="#" class="footer-link"></a>
+        </li>
+        <li>
+            <a href="/anuncios/INSSprofessores.html" class="footer-link"></a>
+        </li>
+        <li>
+            <a href="/anuncios/InsençãoTributária.html" class="footer-link"></a>
+        </li>
+        
+    </ul> -->
+      <!-- ESPAÇO ABAIXO DA LOGO -->
+
+        
+    </div>
+    <div id="footer_subscribe">
+        <h3>Meu Email</h3>
+        <div id="input_group">
+            <p id="email"> contato@robsonteles.com.br</p> 
+            <button>
+                <i class="fa-regular fa-envelope"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="footer_copyright">
+        &#169
+        2024 Robson Teles - Todos os direitos reservados
+    </div>
+    <div style="font-size: 0.9rem;
+    font-weight: 100;
+    text-align: center;
+    background-color: var(--color-neutral-0);">
+    Desenvolvido por <span style="color:white; font-weight: bold;" >DIGITALI<span style="color:#ff8c00;">-Z </span></span><br><br>
+    </div>
+</footer>
+
+<script src="swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let index = 0;
+        const images = document.querySelectorAll('.carrossel img');
+        const prevButton = document.getElementById('prev-banner');
+        const nextButton = document.getElementById('next-banner');
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".nav");
+
+        function showImage(idx) {
+            images.forEach(img => img.classList.remove('active'));
+            images[idx].classList.add('active');
+        }
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage(index);
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage(index);
+        }
+
+        nextButton.addEventListener('click', function() {
+            nextImage();
+            resetInterval();
+        });
+        prevButton.addEventListener('click', function() {
+            prevImage();
+            resetInterval();
+        });
+        
+        let autoSlide = setInterval(nextImage, 5000);
+        function resetInterval() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextImage, 5000);
+        }
+
+        menuToggle.addEventListener("click", function() {
+            nav.classList.toggle("active");
+        });
+    });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+        const aboutSection = document.querySelector(".animation1");
+        
+        function revealSection() {
+            const sectionPosition = aboutSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (sectionPosition < screenPosition) {
+                aboutSection.classList.add("visible");
+            }
+        }
+
+        window.addEventListener("scroll", revealSection);
+        revealSection();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1, // Começa exibindo um card por vez
+            spaceBetween: 20, // Espaço entre os cards
+            loop: true, // Faz o carrossel girar continuamente
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2, // Em telas maiores, exibe 2 cards
+                },
+                1024: {
+                    slidesPerView: 3, // Em telas grandes, exibe 3 cards
+                }
+            },
+            autoplay: {
+                delay: 3000, // Troca os imóveis automaticamente a cada 3 segundos
+                disableOnInteraction: false, // Continua rodando mesmo após interação
+            }
+        });
+    });
+</script>
+</body>
+</html>

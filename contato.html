@@ -49,26 +49,12 @@ body {
     z-index: 1000;
     transition: background 0.3s ease;
 }
-.navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.9); /* Cor sólida */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-     /* Ajuste de texto */
-}
 .options {
     text-decoration: none;
     color: white;
     transition: color 0.3s ease;
 }
 
-.navbar img {
-    
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.navbar.scrolled .nav-logo img {
-    transform: scale(0.9);
-    opacity: 0.8;
-}
 
 .navbar ul {
     list-style: none;
@@ -325,7 +311,7 @@ footer {
         background: rgba(255, 255, 255, 0.9);
         padding: 1rem;
         position: absolute;
-        top: 100%;
+        top: 120px;
         right: 0;
         width: 100%;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -524,6 +510,7 @@ footer {
             </div>
         </footer>
     
+       
         <script>
             function toggleMenu() {
                 const menu = document.getElementById('menu');
@@ -533,6 +520,5 @@ footer {
              
             
         </script>
-        <script src="script.js"></script>
 </body>
 </html>
